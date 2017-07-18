@@ -17,6 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/28722d4c99.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
   <script src="script.js"></script>
 </head>
 
@@ -173,13 +174,13 @@
       <div class="col-md-8 col-md-offset-2">
         <h2><span>Send direct message:</span></h2>
         <div class="well well-sm">
-          <form class="form-horizontal" action="" method="post">
+          <form class="form-horizontal" action="https://formspree.io/vit.romaniv@gmail.com" method="post" data-toggle="validator">
           <fieldset>    
             <!-- Name input-->
             <div class="form-group form-group-lg">
               <label class="col-md-3 control-label" for="name">Name:</label>
               <div class="col-md-9">
-                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                <input id="name" name="name" type="text" placeholder="Your name" class="form-control" pattern="^[a-zA-Zа-яА-ЯіІїЇ ]{2,30}$" required>
               </div>
             </div>
     
@@ -187,7 +188,7 @@
             <div class="form-group form-group-lg">
               <label class="col-md-3 control-label" for="email">E-mail:</label>
               <div class="col-md-9">
-                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                <input id="email" name="email" type="email" placeholder="Your email" class="form-control" required>
               </div>
             </div>
     
@@ -195,10 +196,12 @@
             <div class="form-group form-group-lg">
               <label class="col-md-3 control-label" for="message">Message:</label>
               <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5" required></textarea>
               </div>
             </div>
     
+            <input type="text" name="_gotcha" style="display:none" />
+
             <!-- Form actions -->
             <div class="form-group">
               <div class="col-md-12 text-right">
